@@ -83,7 +83,7 @@ public class Login extends AppCompatActivity {
         //and take the user to profile activity
         if (mAuth.getCurrentUser() != null) {
             finish();
-            startActivity(new Intent(this, HomeScreen.class));
+            startActivity(new Intent(this, Introscreen.class));
         }
     }
 
