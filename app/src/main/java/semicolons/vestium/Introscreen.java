@@ -55,7 +55,7 @@ public class Introscreen extends AppCompatActivity {
             @Override
             public void run() {
                 /* Create an Intent that will start the Menu-Activity. */
-                Intent mainIntent = new Intent(Introscreen.this,HomeScreen.class);
+                Intent mainIntent = new Intent(Introscreen.this,Login.class);
                 Introscreen.this.startActivity(mainIntent);
                 Introscreen.this.finish();
             }

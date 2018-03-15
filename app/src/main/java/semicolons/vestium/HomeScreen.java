@@ -1,5 +1,6 @@
 package semicolons.vestium;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
@@ -18,9 +20,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+
+import semicolons.vestium.fragments.HomeFragment;
+import semicolons.vestium.fragments.LookbookFragment;
+import semicolons.vestium.fragments.CircleFragment;
+import semicolons.vestium.fragments.CalendarFragment;
+
 
 
 public class HomeScreen extends AppCompatActivity {
@@ -32,6 +38,8 @@ public class HomeScreen extends AppCompatActivity {
     private ImageView imageView;
     private TextView textName, textEmail;
     private FirebaseAuth mAuth;
+
+    private ViewPagerAdapter adapter;
 
     private int[] tabIcons = {
             R.drawable.ic_home_white_24dp,
@@ -46,28 +54,16 @@ public class HomeScreen extends AppCompatActivity {
 
 
         final ImageButton buttonOne = (ImageButton) findViewById(R.id.menu_button);
+        final Button logout = (Button) findViewById(R.id.button7);
+
+
         assert buttonOne != null;
+
         buttonOne.setOnClickListener(new buttonsListener());
+        logout.setOnClickListener(new logoutListener());
 
         appDrawer = new MenuDrawer(this);
-        /*
-        //Showing the username and image etc
-        mAuth = FirebaseAuth.getInstance();
 
-        imageView = findViewById(R.id.imageView);
-        textName = findViewById(R.id.textViewName);
-
-
-        FirebaseUser user = mAuth.getCurrentUser();
-
-        Glide.with(this)
-                .load(user.getPhotoUrl())
-                .into(imageView);
-
-        textName.setText(user.getDisplayName().toUpperCase());
-
-        //The sliding tab widget
-        */
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
@@ -96,11 +92,11 @@ public class HomeScreen extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
 
         viewPager.setPageMargin(25);
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Test2(), "HOME");
-        adapter.addFragment(new Test1(), "CALENDAR");
-        adapter.addFragment(new Test2(), "LOOKBOOK");
-        adapter.addFragment(new Test1(), "CIRCLE");
+        adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new HomeFragment(), "HOME");
+        adapter.addFragment(new CalendarFragment(), "CALENDAR");
+        adapter.addFragment(new LookbookFragment(), "LOOKBOOK");
+        adapter.addFragment(new CircleFragment(), "CIRCLE");
 
         viewPager.setAdapter(adapter);
     }
@@ -111,6 +107,18 @@ public class HomeScreen extends AppCompatActivity {
             appDrawer.switchDrawer();
         }
     }
+
+    public class logoutListener implements View.OnClickListener{
+        @Override
+        public void onClick(View v) {
+            mAuth.getInstance().signOut();
+            Intent intent = new Intent(HomeScreen.this, Login.class);
+            startActivity(intent);
+            finish();
+        }
+    }
+
+
 
 
 
@@ -141,5 +149,7 @@ public class HomeScreen extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             return mFragmentTitleList.get(position);
         }
+
+
     }
 }

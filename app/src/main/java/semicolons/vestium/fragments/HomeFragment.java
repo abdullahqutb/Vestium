@@ -1,4 +1,4 @@
-package semicolons.vestium;
+package semicolons.vestium.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,8 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import semicolons.vestium.R;
 
-import android.view.animation.AnimationUtils;
-import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,13 +15,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 
-public class Test2 extends Fragment{
+public class HomeFragment extends Fragment{
 
     private ImageView imageView;
     private TextView textViewName;
     private FirebaseAuth mAuth;
 
-    public Test2() {
+    public HomeFragment() {
         // Required empty public constructor
     }
 
@@ -38,7 +36,7 @@ public class Test2 extends Fragment{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View v = inflater.inflate(R.layout.activity_test2, container,false);
+        View v = inflater.inflate(R.layout.homefragment, container,false);
         //Showing the username and image etc
         mAuth = FirebaseAuth.getInstance();
 

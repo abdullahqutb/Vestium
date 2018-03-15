@@ -83,7 +83,8 @@ public class Login extends AppCompatActivity {
         //and take the user to profile activity
         if (mAuth.getCurrentUser() != null) {
             finish();
-            startActivity(new Intent(this, Introscreen.class));
+            startActivity(new Intent(this, HomeScreen.class));
+
         }
     }
 
@@ -104,7 +105,7 @@ public class Login extends AppCompatActivity {
                 //authenticating with firebase
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
-                Toast.makeText(Login.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(Login.this, "Internet connection problem", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -127,12 +128,13 @@ public class Login extends AppCompatActivity {
                             Toast.makeText(Login.this, "Signed in successfully", Toast.LENGTH_SHORT).show();
                             if (mAuth.getCurrentUser() != null) {
                                 Intent i = new Intent(getApplicationContext(), HomeScreen.class);
+                                finish();
                                 startActivity(i);
                             }
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
-                            Toast.makeText(Login.this, "Authentication failed.",
+                            Toast.makeText(Login.this, "Authentication failed",
                                     Toast.LENGTH_SHORT).show();
 
                         }

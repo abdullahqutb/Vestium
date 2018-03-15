@@ -1,4 +1,4 @@
-package semicolons.vestium;
+package semicolons.vestium.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import semicolons.vestium.R;
 
 
-public class Test1 extends Fragment{
+public class CalendarFragment extends Fragment{
 
-    public Test1() {
+    public CalendarFragment() {
         // Required empty public constructor
     }
 
@@ -23,7 +23,7 @@ public class Test1 extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_test1, container, false);
+        return inflater.inflate(R.layout.calendarfragment, container, false);
     }
 
 }
