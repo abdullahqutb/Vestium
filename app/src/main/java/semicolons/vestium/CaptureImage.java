@@ -27,6 +27,7 @@ public class CaptureImage extends AppCompatActivity {
     String mCurrentPhotoPath;
     // this is the uri of the taken image
     Uri photoURI;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +43,13 @@ public class CaptureImage extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.FROYO)
     private File createImageFile() throws IOException {
         // Create an image file name
-        String timeStamp = "SemiColons";//new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        // String timeStamp = "SemiColons";
+        // unique file stamp is needed for pictures not to override each other
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+
+        // added the SemiColons stamp to its end
+        timeStamp = "SemiColons" + timeStamp;
+
         String imageFileName = "JPEG_" + timeStamp + "_";
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         File image = File.createTempFile(
@@ -78,10 +85,8 @@ public class CaptureImage extends AppCompatActivity {
                 startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
             }
         }
-        Intent intent = new Intent(CaptureImage.this, SaveArticle.class);
-        intent.putExtra("imagePath", photoURI);
-        finish();
-        startActivity(intent);
+        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+        startActivity(takePictureIntent);
 
     }
 }

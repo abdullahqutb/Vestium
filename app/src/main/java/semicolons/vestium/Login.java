@@ -1,7 +1,5 @@
 package semicolons.vestium;
 
-// amir's contribution
-
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
