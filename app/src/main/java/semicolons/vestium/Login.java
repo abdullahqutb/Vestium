@@ -1,7 +1,5 @@
 package semicolons.vestium;
 
-// amir's contribution
-
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
@@ -23,6 +21,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class Login extends AppCompatActivity {
@@ -38,7 +38,8 @@ public class Login extends AppCompatActivity {
 
     //And also a Firebase Auth object 
     FirebaseAuth mAuth;
-
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
 
 
     @Override
@@ -50,6 +51,11 @@ public class Login extends AppCompatActivity {
 
         //first we intialized the FirebaseAuth object
         mAuth = FirebaseAuth.getInstance();
+        // init database
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference("clothes");
+
+        databaseReference.setValue("T-shirt");
 
         //Then we need a GoogleSignInOptions object
         //And we need to build it as below

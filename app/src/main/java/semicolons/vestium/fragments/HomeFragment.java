@@ -33,7 +33,9 @@ public class HomeFragment extends Fragment{
     private ImageView imageView;
     private TextView textViewName;
     private FirebaseAuth mAuth;
-    private Button newItem;
+
+    // button that adds new item
+    private Button addItemButton;
 
 
     public HomeFragment() {
@@ -65,9 +67,9 @@ public class HomeFragment extends Fragment{
 
         imageView = v.findViewById(R.id.imageView);
         textViewName = v.findViewById(R.id.textViewName);
-        newItem = v.findViewById(R.id.buttoncapture);
+        addItemButton = v.findViewById(R.id.buttoncapture);
 
-        newItem.setOnClickListener(new captureListener());
+        addItemButton.setOnClickListener(new captureListener());
 
         FirebaseUser user = mAuth.getCurrentUser();
 

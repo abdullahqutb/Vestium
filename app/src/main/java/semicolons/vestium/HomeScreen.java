@@ -29,6 +29,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 import semicolons.vestium.fragments.HomeFragment;
 import semicolons.vestium.fragments.LookbookFragment;
@@ -46,6 +47,7 @@ public class HomeScreen extends AppCompatActivity {
     private ViewPager viewPager;
     private TextView textName, textEmail;
     private FirebaseAuth mAuth;
+
 
 
     private ViewPagerAdapter adapter;
