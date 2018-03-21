@@ -1,39 +1,35 @@
 {
   "project_info": {
-    "project_number": "619893365407",
-    "firebase_url": "https://vestium-semicolons.firebaseio.com",
-    "project_id": "vestium-semicolons",
-    "storage_bucket": "vestium-semicolons.appspot.com"
+    "project_number": "970934787780",
+    "firebase_url": "https://vestium-8564f.firebaseio.com",
+    "project_id": "vestium-8564f",
+    "storage_bucket": "vestium-8564f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:619893365407:android:da3977a33d71c4e8",
+        "mobilesdk_app_id": "1:970934787780:android:da3977a33d71c4e8",
         "android_client_info": {
           "package_name": "semicolons.vestium"
         }
       },
       "oauth_client": [
         {
-          "client_id": "619893365407-ev3bjipkjbabar7cmrfqeecofjdjp5pt.apps.googleusercontent.com",
-          "client_type": 3
-        },
-        {
-          "client_id": "619893365407-bo9j1c8isr3aku8bu249d6mr9p4ej897.apps.googleusercontent.com",
+          "client_id": "970934787780-et004ods0chj3m1ev1eq3jr75b93q88n.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "semicolons.vestium",
-            "certificate_hash": "b0def26ea2ef7f15452cf89db420409ace7ac622"
+            "certificate_hash": "d6a5f52430786882f8589a43d0112296e4b6f3f4"
           }
         },
         {
-          "client_id": "619893365407-6p2fgultk352cq5b5ik12n8ckcas7o74.apps.googleusercontent.com",
+          "client_id": "970934787780-d1tndq3lpqm37g5fs023nncvur9egqvg.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA8mB11lcwt984ALm-1JeJGSfjQdYNtL7Q"
+          "current_key": "AIzaSyAMYDFFYU-BOPN1Xg2I9vyaLVwfyHlyEQQ"
         }
       ],
       "services": {
@@ -44,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "619893365407-ev3bjipkjbabar7cmrfqeecofjdjp5pt.apps.googleusercontent.com",
+              "client_id": "970934787780-d1tndq3lpqm37g5fs023nncvur9egqvg.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
