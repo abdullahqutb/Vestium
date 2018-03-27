@@ -21,8 +21,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class Login extends AppCompatActivity {
@@ -40,6 +43,7 @@ public class Login extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+    FirebaseUser firebaseUser;
 
 
     @Override
@@ -56,6 +60,10 @@ public class Login extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference("clothes");
 
         databaseReference.setValue("T-shirt");
+
+        // firebase user
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
 
         //Then we need a GoogleSignInOptions object
         //And we need to build it as below
@@ -78,6 +86,19 @@ public class Login extends AppCompatActivity {
             }
         });
 
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // this is called whenever data at this location is updated
+                String value = dataSnapshot.getValue(String.class);
+                Log.d(TAG, "Value is:" + value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.w(TAG, "Failed to read value.", databaseError.toException());
+            }
+        });
     }
 
     @Override
