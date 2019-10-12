@@ -7,6 +7,7 @@
     <dimen name="tab_label">10sp</dimen>
     <dimen name="custom_tab_layout_height">50dp</dimen>
     <dimen name="drawer_height">350dp</dimen>
+    <dimen name="min_bar_height">15dp</dimen>
 
 
 </resources>

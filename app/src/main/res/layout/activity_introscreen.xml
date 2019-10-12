@@ -8,7 +8,7 @@
     android:background="@drawable/gradientintro"
     android:orientation="vertical"
     android:paddingTop="50dp"
-    tools:context="semicolons.vestium.Introscreen">
+    tools:context="allinontech.vestium.Introscreen">
 
     <LinearLayout
         android:id="@+id/introimages"

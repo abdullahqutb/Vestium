@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="semicolons.vestium.fragments.HomeFragment">
+    android:background="@drawable/homebg"
+    tools:context="allinontech.vestium.fragments.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#e2e2e2"
         android:orientation="vertical"
         android:paddingBottom="20dp">
 
@@ -82,12 +82,77 @@
             </LinearLayout>
 
         </LinearLayout>
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/homeAdView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_centerHorizontal="true"
+            ads:adUnitId="ca-app-pub-2323243706273459/6971726942"
+            ads:adSize="BANNER">
+        </com.google.android.gms.ads.AdView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:paddingBottom="15dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="15dp">
+
+
+            <Button
+                android:id="@+id/buttoncapture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/roundbutton"
+                android:drawableStart="@drawable/ic_add_circle_outline_black_24dp"
+                android:paddingLeft="20dp"
+                android:shadowColor="#1e1e1e"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="2"
+                android:text="ADD ITEM"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/buttonlaundry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/roundbuttonblack"
+                android:drawableStart="@drawable/ic_local_laundry_service_black_24dp"
+                android:paddingLeft="20dp"
+                android:shadowColor="#1e1e1e"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="2"
+                android:text="LAUNDRY"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="@drawable/hellobg"
+            android:minHeight="300dp"
             android:orientation="horizontal"
             android:shadowColor="#333333"
             android:shadowDx="0.5"
@@ -106,7 +171,7 @@
                 android:shadowRadius="3">
 
 
-                <semicolons.vestium.assets.VerticalTextView
+                <allinontech.vestium.assets.VerticalTextView
                     android:id="@+id/textView2"
 
                     android:layout_width="wrap_content"
@@ -124,52 +189,45 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
-                <TextView
+                <ProgressBar
+                    android:id="@+id/progressBarLook"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="100dp"
+                    android:visibility="visible" />
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Hey Again!"
+                    android:orientation="vertical">
 
-                    android:textSize="40dp"
-                    android:textStyle="bold" />
+                    <Button
+                        android:id="@+id/reloadLook"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="right"
+                        android:layout_margin="10dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/roundbutton"
+                        android:drawableLeft="@drawable/ic_refresh_black_24dp"
+                        android:gravity="center"
+                        android:paddingLeft="14dp"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Hey Again!"
-                    android:textSize="40dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Hey Again!"
-                    android:textSize="40dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Hey Again!"
-                    android:textSize="40dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Hey Again!"
-                    android:textSize="40dp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/todaysLook"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </RelativeLayout>
 
         </LinearLayout>
 
@@ -178,6 +236,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="@drawable/hellobg"
+            android:minHeight="300dp"
             android:orientation="horizontal"
             android:shadowColor="#333333"
             android:shadowDx="0.5"
@@ -196,7 +255,7 @@
                 android:shadowRadius="3">
 
 
-                <semicolons.vestium.assets.VerticalTextView
+                <allinontech.vestium.assets.VerticalTextView
                     android:id="@+id/textView3"
 
                     android:layout_width="wrap_content"
@@ -207,7 +266,7 @@
                     android:shadowDx="1"
                     android:shadowDy="1"
                     android:shadowRadius="2"
-                    android:text="NOTIFICATIONS"
+                    android:text="CURRENT POLL"
                     android:textAlignment="center"
                     android:textColor="#ffffff"
                     android:textSize="20sp"
@@ -217,48 +276,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:minHeight="200dp">
 
-                <TextView
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/pollView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Hey Again!"
+                    android:layout_height="match_parent" />
 
-                    android:textSize="40dp"
-                    android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Hey Again!"
-                    android:textSize="40dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Hey Again!"
-                    android:textSize="40dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Hey Again!"
-                    android:textSize="40dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Hey Again!"
-                    android:textSize="40dp"
-                    android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>

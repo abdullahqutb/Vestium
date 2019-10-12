@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/homebg"
+    tools:context=".Additem">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:elevation="55dp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:text="ADD ITEM"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbaradditem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient1"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="58dp"
+            app:titleTextColor="#FFFFFF"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@drawable/hellobg"
+            android:padding="15dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/view2"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
+                    android:elevation="12dp"
+                    android:innerRadius="0dp"
+                    android:shape="ring"
+                    android:thicknessRatio="1.9"
+                    app:cardCornerRadius="40dp">
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:scaleType="centerCrop"></ImageView>
+                </android.support.v7.widget.CardView>
+
+                <com.github.florent37.materialtextfield.MaterialTextField
+                    android:id="@+id/item_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:mtf_image="@drawable/ic_local_offer_black_24dp"
+                    app:mtf_labelColor="#333333">
+
+                    <EditText
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed"
+                        android:hint="Item name"
+                        android:textColor="#333333"
+                        android:textSize="13sp" />
+                </com.github.florent37.materialtextfield.MaterialTextField>
+
+                <com.github.florent37.materialtextfield.MaterialTextField
+                    android:id="@+id/item_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:mtf_image="@drawable/ic_local_offer_black_24dp"
+                    app:mtf_labelColor="#333333">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Description (optional)"
+                        android:fontFamily="sans-serif-condensed"
+                        android:textColor="#333333"
+                        android:textSize="13sp" />
+                </com.github.florent37.materialtextfield.MaterialTextField>
+
+
+                <Button
+                    android:id="@+id/categoryButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Select a category"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:background="#083286"/>
+                <Button
+                    android:id="@+id/colorButton"
+                    android:layout_width="match_parent"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:layout_marginTop="30dp"
+                    android:text="Select a color"
+                    android:background="#085fc9"/>
+                <Button
+                    android:id="@+id/styleButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:layout_marginTop="30dp"
+                    android:text="Select a style"
+                    android:background="#338ff7"/>
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/additembutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/roundbutton"
+                    android:text="Add"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</RelativeLayout>

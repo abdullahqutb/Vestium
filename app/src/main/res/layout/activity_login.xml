@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/loginbg"
-    tools:context="semicolons.vestium.Login">
+    tools:context="allinontech.vestium.Login">
 
     <RelativeLayout
         android:layout_width="match_parent"

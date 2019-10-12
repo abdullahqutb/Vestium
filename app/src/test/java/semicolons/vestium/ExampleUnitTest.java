@@ -1,4 +1,4 @@
-package semicolons.vestium;
+package allinontech.vestium;
 
 import org.junit.Test;
 

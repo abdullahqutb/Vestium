@@ -2,9 +2,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:descendantFocusability="blocksDescendants"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="semicolons.vestium.fragments.CircleFragment">
+    android:background="@drawable/homebg"
+    tools:context="allinontech.vestium.fragments.CircleFragment">
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -12,109 +14,184 @@
     android:layout_height="wrap_content"
     android:paddingBottom="20dp">
 
+    <Button
+        android:id="@+id/createPoll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/roundbutton"
+        android:text="CREATE POLL"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="Hey!"
-        android:textSize="40dp"
-        android:textStyle="bold" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hey!"
+        android:layout_margin="5dp">
 
-        android:gravity="center_horizontal"
-        android:textSize="40dp"
-        android:textStyle="bold" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hey!"
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/addFriend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            app:backgroundTint="@color/floatingback"
+            android:clickable="true"
+            android:src="@drawable/ic_add_circle_outline_black_24dp" />
 
-        android:gravity="center_horizontal"
-        android:textSize="40dp"
-        android:textStyle="bold" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:minHeight="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/hellobg"
+            android:orientation="horizontal"
+            android:shadowColor="#333333"
+            android:shadowDx="0.5"
+            android:shadowDy="2"
+            android:shadowRadius="3">
 
-        android:gravity="center_horizontal"
-        android:text="Hey!"
-        android:textSize="40dp"
-        android:textStyle="bold" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            <LinearLayout
+                android:id="@+id/friendLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/toptext"
+                android:orientation="vertical"
+                android:shadowColor="#333333"
+                android:shadowDx="0.5"
+                android:shadowDy="2"
+                android:shadowRadius="3">
 
-        android:gravity="center_horizontal"
-        android:text="Hey!"
-        android:textSize="40dp"
-        android:textStyle="bold" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hey!"
 
-        android:gravity="center_horizontal"
-        android:textSize="40dp"
-        android:textStyle="bold" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="Hey!"
-        android:textSize="40dp"
-        android:textStyle="bold" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hey!"
+                <allinontech.vestium.assets.VerticalTextView
+                    android:id="@+id/textView3"
 
-        android:gravity="center_horizontal"
-        android:textSize="40dp"
-        android:textStyle="bold" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hey!"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="bottom|right"
+                    android:shadowColor="#414141"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"
+                    android:text="FRIENDS"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-        android:gravity="center_horizontal"
-        android:textSize="40dp"
-        android:textStyle="bold" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        android:gravity="center_horizontal"
-        android:text="Hey!"
-        android:textSize="40dp"
-        android:textStyle="bold" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+                <TextView
+                    android:id="@+id/noitems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="70dp"
+                    android:gravity="center"
+                    android:text="No friends in your circle"
+                    android:textStyle="italic"
+                    android:visibility="invisible" />
 
-        android:gravity="center_horizontal"
-        android:text="Hey!"
-        android:textSize="40dp"
-        android:textStyle="bold" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hey!"
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/friendList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="3dp">
 
-        android:gravity="center_horizontal"
-        android:textSize="40dp"
-        android:textStyle="bold" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+                </android.support.v7.widget.RecyclerView>
 
-        android:gravity="center_horizontal"
-        android:text="Hey!"
-        android:textSize="40dp"
-        android:textStyle="bold" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/circlesContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/hellobg"
+        android:minHeight="200dp"
+        android:orientation="horizontal"
+        android:shadowColor="#333333"
+        android:shadowDx="0.5"
+        android:shadowDy="2"
+        android:shadowRadius="3">
+
+        <LinearLayout
+            android:id="@+id/circlePollLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/notificationbg"
+            android:orientation="vertical"
+            android:shadowColor="#333333"
+            android:shadowDx="0.5"
+            android:shadowDy="2"
+            android:shadowRadius="3">
+
+
+            <allinontech.vestium.assets.VerticalTextView
+                android:id="@+id/abcd"
+
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="bottom|right"
+                android:shadowColor="#414141"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="POLLS"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:id="@+id/progressBarPolls"
+                style="?android:attr/progressBarStyle"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/pollsList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#b1b1b1">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/noPollsInCircle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:gravity="center"
+                android:text="No ongoing polls"
+                android:textStyle="italic"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
 
 </LinearLayout>

@@ -1,122 +1,50 @@
-<android.support.v4.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="semicolons.vestium.fragments.CalendarFragment">
-
+    android:background="@drawable/homebg"
+    tools:context="allinontech.vestium.fragments.CalendarFragment">
 
         <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content"
-            android:paddingBottom="20dp">
-
-
-        <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:gravity="center_horizontal"
-    android:text="Hey!"
-    android:textSize="40dp"
-    android:textStyle="bold" />
-        <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hey!"
+            android:orientation="vertical">
+                <com.google.android.gms.ads.AdView
+                    xmlns:ads="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/calendarAdView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:layout_centerHorizontal="true"
+                    ads:adUnitId="ca-app-pub-2323243706273459/2995278320"
+                    ads:adSize="BANNER">
+                </com.google.android.gms.ads.AdView>
 
-            android:gravity="center_horizontal"
-            android:textSize="40dp"
-            android:textStyle="bold" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hey!"
+                <CalendarView
+                    android:id="@+id/calendarView55"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/hellobg" />
 
-            android:gravity="center_horizontal"
-            android:textSize="40dp"
-            android:textStyle="bold" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+                <Button
+                    android:id="@+id/calendarFragmentAddlookButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/roundbutton"
+                    android:text="Add a new Look"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
 
-            android:gravity="center_horizontal"
-            android:text="Hey!"
-            android:textSize="40dp"
-            android:textStyle="bold" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/calendarlooklist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/hellobg" />
 
-            android:gravity="center_horizontal"
-            android:text="Hey!"
-            android:textSize="40dp"
-            android:textStyle="bold" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hey!"
-
-            android:gravity="center_horizontal"
-            android:textSize="40dp"
-            android:textStyle="bold" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="Hey!"
-            android:textSize="40dp"
-            android:textStyle="bold" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hey!"
-
-            android:gravity="center_horizontal"
-            android:textSize="40dp"
-            android:textStyle="bold" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hey!"
-
-            android:gravity="center_horizontal"
-            android:textSize="40dp"
-            android:textStyle="bold" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:gravity="center_horizontal"
-            android:text="Hey!"
-            android:textSize="40dp"
-            android:textStyle="bold" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:gravity="center_horizontal"
-            android:text="Hey!"
-            android:textSize="40dp"
-            android:textStyle="bold" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hey!"
-
-            android:gravity="center_horizontal"
-            android:textSize="40dp"
-            android:textStyle="bold" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:gravity="center_horizontal"
-            android:text="Hey!"
-            android:textSize="40dp"
-            android:textStyle="bold" />
-
-
-</LinearLayout>
+        </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
