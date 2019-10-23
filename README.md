@@ -1,1 +1,3 @@
-# SemiColonsB
+# SemiColons
+
+Vestium wardrobe management app.
